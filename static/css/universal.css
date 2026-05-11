@@ -1,0 +1,8 @@
+cuerpo {
+relleno: 0;
+margen: 0;
+}
+html, cuerpo, #mapa {
+altura: 100%;
+ancho: 100vw;
+}
