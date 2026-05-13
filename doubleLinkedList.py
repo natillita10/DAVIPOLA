@@ -45,3 +45,16 @@ class DoubleLinkedList:
             parent.sub_list.tail = child
 
         return parent.sub_list
+    
+    def print_multilist(self, level=0):
+        if self.head is None:
+            print("Empty list")
+            return
+
+        current = self.head
+
+        while current:
+            print("  " * level + str(current))
+
+            if current.sub_list:
+                current.sub_list.print_multilist(level + 1)

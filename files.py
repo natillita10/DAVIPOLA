@@ -52,3 +52,34 @@ class Files:
                 )
                 
             return countries
+        
+        def get_markers(self, multilist):
+            markers = []
+
+            current_country = multilist.head
+
+            while current_country:
+                if current_country.sub_list:
+                    current_department = current_country.sub_list.head
+
+                    while current_department:
+                        if current_department.sub_list:
+                            current_city = current_department.sub_list.head
+
+                            while current_city:
+                                markers.append({
+                                    "lat": current_city.lat,
+                                    "lon": current_city.lon,
+                                    "popup": f"""
+                                    <b>{current_city.name}</b><br>
+                                    Departamento:
+                                    {current_department.name}
+                                    """
+                                })
+                                current_city = current_city.next
+
+                        current_department = current_department.next
+
+                current_country = current_country.next
+
+            return markers
