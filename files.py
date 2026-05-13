@@ -24,3 +24,31 @@ class Files:
 
                 lat = row["lat"]
                 lon = row["lon"]
+
+                if dept_code not in departments:
+                    department = Department(dept_code, dept_name)
+
+                    department = Deparment(
+                        colombia,
+                        department
+                    )
+                    countries.add_child(
+                        colombia,
+                        department
+                    )
+                    
+                    departments[dept_code] = department
+                
+                city = City(
+                    city_code,
+                    city_name,
+                    lat,
+                    lon
+                )
+
+                countries.add_child(
+                    departments[dept_code],
+                    city
+                )
+                
+            return countries
