@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from country import Country
+
 app=Flask(__name__)
 @app.route('/')
 def root():
