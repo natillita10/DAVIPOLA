@@ -1,3 +1,3 @@
 from node import Node
-class Deparment(Node):
+class Country(Node):
     pass
