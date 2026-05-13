@@ -4,7 +4,7 @@ from country import Country
 from departament import Deparment
 from city import City
 
-def Files:
+class Files:
     def read_divipola(self, file_path):
         countries = DoubleLinkedList()
         colombia = Country("CO", "Colombia")

@@ -23,3 +23,25 @@ class DoubleLinkedList:
             current = current.next
         return None
     
+    def append(self, new_node):
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.prev = self.tail
+            self.tail.next = new_node
+            self.tail = new_node
+
+    def add_child(self, parent, child):
+        if parent.sub_list is None:
+            sublist = DoubleLinkedList()
+            sublist.head = child
+            sublist.tail = child
+            parent.sub_list = sublist
+        else:
+            current = parent.sub_list.tail
+            current.next = child
+            child.prev = current
+            parent.sub_list.tail = child
+
+        return parent.sub_list
